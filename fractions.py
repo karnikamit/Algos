@@ -36,11 +36,11 @@ class Fraction:
         return Fraction(new_num, new_den)
 
 
-# fr = Fraction(3, 2)
-# fr1 = Fraction(1, 4)
-# fr3 = fr + fr1
-# fr4 = fr * fr1
-# fr5 = fr / fr1
-# print fr3.show_lowest()
-# print fr4.show()
-# print fr5.show_lowest()
+fr = Fraction(3, 2)
+fr1 = Fraction(1, 4)
+fr3 = fr + fr1
+fr4 = fr * fr1
+fr5 = fr / fr1
+print fr3.show_lowest()
+print fr4.show()
+print fr5.show_lowest()
