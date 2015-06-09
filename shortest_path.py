@@ -126,7 +126,7 @@ def dijkstra(aGraph, start):
         heapq.heapify(unvisited_queue)
 
 
-if __author__ == 'karnikamit'
+if __author__ == 'karnikamit':
 
     g = Graph()
 
