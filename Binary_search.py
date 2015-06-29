@@ -1,4 +1,5 @@
 __author__ = 'karnikamit'
+import time
 
 
 def binary_search(item, a_list):
@@ -19,18 +20,18 @@ def binary_search(item, a_list):
     while position < len(a_list):
         if a_list[position] == item:
             resp["response"] = "success"
-            resp['New_List'] = a_list
             resp["Msg"] = "item found at position " + str(position)
             return resp
         position += 1
     return resp
 
 if __author__ == 'karnikamit':
-    myList = range(10)
-    item = 6
-    search = binary_search(item, myList)
+    start_time = time.time()
+    myList = range(10**6)
+    item_sought = 16024
+    search = binary_search(item_sought, myList)
     if search["response"] == "success":
-        print 'List ', search['New_List']
         print search['Msg']
     else:
         print 'item Not found'
+    print 'time taken ' + str(time.time() - start_time)
