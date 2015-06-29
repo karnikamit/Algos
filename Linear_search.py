@@ -1,4 +1,5 @@
 __author__ = 'karnikamit'
+import time
 
 
 def linear_search(item, a_list):
@@ -19,6 +20,8 @@ def linear_search(item, a_list):
     return response
 
 if __author__ == 'karnikamit':
-    my_list = range(100)
-    item = 10
-    print linear_search(item, my_list)
+    start = time.time()
+    my_list = range(10**6)
+    item_sought = 16024
+    print linear_search(item_sought, my_list)
+    print 'time taken ' + str(time.time()-start)
