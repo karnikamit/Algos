@@ -1,6 +1,5 @@
 __author__ = 'karnikamit'
 from operator import itemgetter
-
 graph = {
         'vertices': ['A', 'B', 'C', 'D', 'E', 'F'],
         'edges':[{'edge_w': ['A', 'B'], 'weight': 05,},
