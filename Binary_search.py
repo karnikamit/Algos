@@ -1,8 +1,10 @@
 __author__ = 'karnikamit'
 import time
+import random
 
 
 def binary_search(item, a_list):
+    a_list.sort()
     resp = {"response": "failure"}
     position = 0
     start = 0
@@ -27,8 +29,9 @@ def binary_search(item, a_list):
 
 if __author__ == 'karnikamit':
     start_time = time.time()
-    myList = range(10**6)
-    item_sought = 16024
+    myList = range(10**7)
+    random.shuffle(myList)
+    item_sought = 9999999
     search = binary_search(item_sought, myList)
     if search["response"] == "success":
         print search['Msg']
