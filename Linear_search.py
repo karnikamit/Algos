@@ -1,5 +1,6 @@
 __author__ = 'karnikamit'
 import time
+import random
 
 
 def linear_search(item, a_list):
@@ -21,7 +22,8 @@ def linear_search(item, a_list):
 
 if __author__ == 'karnikamit':
     start = time.time()
-    my_list = range(10**6)
-    item_sought = 16024
+    my_list = range(10**7)
+    random.shuffle(my_list)
+    item_sought = 9999999
     print linear_search(item_sought, my_list)
     print 'time taken ' + str(time.time()-start)
