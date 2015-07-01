@@ -19,7 +19,7 @@ def stack():
         elif q == 3:
             for i in stack_list:
                 print i
-        else:
+        elif q == 4:
             dot = '...'
             for c in dot:
                 print c,
@@ -27,3 +27,6 @@ def stack():
                 sleep(1)
             print 'Bye'
             flag = False
+        else:
+            print 'Asshole!'
+            exit(0)
