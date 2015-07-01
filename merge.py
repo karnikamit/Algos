@@ -14,10 +14,10 @@ def merge(x, y):
 
     while True:
         if i >= len(x):          # If xs list is finished,
-            result.extend(y[j:])  # Add remaining items from ys
-            return result          # And we're done.
+            result.extend(y[j:])  # Add remaining items from y
+            return result
 
-        if j >= len(y):          # Same again, but swap roles
+        if j >= len(y):
             result.extend(x[i:])
             return result
 
@@ -28,7 +28,7 @@ def merge(x, y):
         else:
             result.append(y[j])
             j += 1
-
-a = range(10)
-b = range(20)
-print merge(a, b)
+if __author__ == 'karnikamit':
+    a = range(10)
+    b = range(20)
+    print merge(a, b)
