@@ -1,44 +1,37 @@
 __author__ = 'karnikamit'
 
-def quicksort(a):
-    split = partition(a)
-    a1 = a[:split]
-    print('not sorted a1', a1)
-    if a1:
-        list1 = partition(a1)
-        if list1 == 1:
-            print(' sorted a1', a1)
-    a2 = a[split+1:]
-    print('not sorted a2', a2)
-    if a2:
-        list2 = partition(a2)
-        print('list2', list2)
-    print(list(list1, list2))
 
-def partition(array):
-    if len(array) > 1:
+def partition(my_list, start, end):
+    pivot = my_list[start]
+    low = start+1
+    high = end
+    done = False
+    while not done:
+        while low <= high and my_list[low] <= pivot:
+            low += 1
+        while my_list[high] >= pivot and high >= low:
+            high -= 1
+        if high < low:
+            done = True
+        else:
+            my_list[low], my_list[high] = my_list[high], my_list[low]
+    my_list[start], my_list[high] = my_list[high], my_list[start]
+    return high
 
-        low = 0
-        high = len(array) - 1
-        pivot = array[low]
-        i = low+1
-        j = len(array) - 1
 
-        while array:
-            while array[i] < pivot:         # inc i until u find a greter no than the pivot
-                i += 1
+def quicksort(my_list, start, end):
+    if start < end:
+        split = partition(my_list, start, end)
+        quicksort(my_list, start, split-1)
+        quicksort(my_list, split+1, end)
+    return my_list
 
-            while array[j] > pivot:         # dec j until u find a smaller than the pivot
-                j -= 1
 
-            if i < j:
-                array[i], array[j] = array[j], array[i]
-            else:
-                array[j], array[low] = array[low], array[j]
-                print(array)
-                return j
-    else:
-        return array
 if __author__ == 'karnikamit':
-    # Input a list
-    # quicksort()
+    import random
+    import time
+    my_array = range(10**7)
+    random.shuffle(my_array)
+    start_time = time.time()
+    print quicksort(my_array, 0, len(my_array)-1)
+    print time.time()-start_time, " seconds"
