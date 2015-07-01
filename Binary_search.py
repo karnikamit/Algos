@@ -1,40 +1,28 @@
 __author__ = 'karnikamit'
-import time
 import random
+import time
 
 
 def binary_search(item, a_list):
+    start_time = time.time()
     a_list.sort()
-    resp = {"response": "failure"}
-    position = 0
-    start = 0
-    end = len(a_list) - 1
-    mid_item = (start + end) // 2
-    if a_list[mid_item] == item:
-        resp["response"] = "success"
-        resp["Msg"] = "item found at index " + str(mid_item)
-        return resp
-    elif a_list[mid_item] > item:
-        end = mid_item
-    else:
-        start = mid_item + 1
-    a_list = a_list[start:end + 1]
-    while position < len(a_list):
-        if a_list[position] == item:
+    start, end = 0, len(a_list)-1
+    found = False
+    resp = {"response": "failure", "msg": "item not found"}
+    while start <= end and not found:
+        mid = (start + end) // 2
+        if a_list[mid] > item:
+            end = mid - 1
+        elif a_list[mid] < item:
+            start = mid + 1
+        else:
             resp["response"] = "success"
-            resp["Msg"] = "item found at position " + str(position)
+            resp["msg"] = "item found at " + str(mid)
+            resp["time taken"] = str(time.time()-start_time) + " seconds"
             return resp
-        position += 1
     return resp
 
 if __author__ == 'karnikamit':
-    start_time = time.time()
-    myList = range(10**7)
-    random.shuffle(myList)
-    item_sought = 9999999
-    search = binary_search(item_sought, myList)
-    if search["response"] == "success":
-        print search['Msg']
-    else:
-        print 'item Not found'
-    print 'time taken ' + str(time.time() - start_time)
+    a = range(10**4)
+    random.shuffle(a)
+    print binary_search(99, a)
