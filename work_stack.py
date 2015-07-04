@@ -20,12 +20,19 @@ def stack():
             for i in stack_list:
                 print i
         elif q == 4:
+            # for python 2.7
             dot = '...'
             for c in dot:
                 print c,
                 sys.stdout.flush()
                 sleep(1)
             print 'Bye'
+            
+            # for python 3.3
+            # for c in msg:
+                # sys.stdout.write(c)
+                # sys.stdout.flush()
+                # sleep(1)
             flag = False
         else:
             print 'Asshole!'
