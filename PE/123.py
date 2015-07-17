@@ -1,13 +1,11 @@
 __author__ = 'karnikamit'
-
+from is_prime import is_prime
 
 class PrimeRemainders:
     def __init__(self):
         self.prime = None
-        self.prime_nos = [i for i in xrange(2, 10000) if self.is_prime(i)]
+        self.prime_nos = [i for i in xrange(2, 10000) if is_prime(i)]
 
-    def is_prime(self, n):
-        return all([(n % j) for j in xrange(2, int(n**0.5)+1)]) and n > 1
 
     def get_prime_sq_remainders(self, n):
         self.prime = self.prime_nos[n-1]
