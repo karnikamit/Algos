@@ -1,35 +1,27 @@
 __author__ = 'karnikamit'
 
 
-def is_prime(n):
-    return all([(n % j) for j in range(2, int(n**0.5)+1)]) and n > 1
+class PrimeRemainders:
+    def __init__(self):
+        self.prime = None
+        self.prime_nos = [i for i in xrange(2, 10000) if self.is_prime(i)]
 
-def get_prime(num):
-    return [i for i in range(2, num**2) if is_prime(i)][num-1]
+    def is_prime(self, n):
+        return all([(n % j) for j in xrange(2, int(n**0.5)+1)]) and n > 1
 
-def form_primes(num):
-    primes = []
-    for i in xrange(2, num+1):
-        if is_prime(i):
-            primes.append(i)
-    return primes
+    def get_prime_sq_remainders(self, n):
+        self.prime = self.prime_nos[n-1]
+        numarator = ((self.prime-1)**n + (self.prime+1)**n)
+        denominator = (self.prime**2)
+        print numarator, denominator
+        return numarator/denominator
 
-primes = form_primes(9999)
+    def main(self):
+        for i in xrange(2, 10000):
+            r = self.get_prime_sq_remainders(i)
+            if r >= 1000000000:
+                return self.prime
+        return "NOT Found!"
 
-def get_prime_sq_remainders(n):
-    global primes
-    p = primes[n-1]
-    print p, 'p'
-    return ((p-1)**n + (p+1)**n)/(p**2)
-
-
-for i in xrange(2, 10000):
-    r = get_prime_sq_remainders(i)
-    print 'r', r
-    if r >= 1000000000:
-        print i, 'here'
-        exit(0)
-
-
-# if is_prime(get_prime_sq_remainders(3)):
-#     print 'yes!'
+p = PrimeRemainders()
+print p.main()
