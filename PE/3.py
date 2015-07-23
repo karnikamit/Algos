@@ -6,7 +6,7 @@ from is_prime import is_prime
 def get_prime_factors(n):
     fac = []
     i = 1
-    while i < n:
+    while i < int(n**0.5+1):
         if n % i == 0 and is_prime(i):
             fac.append(i)
         i += 1
