@@ -33,3 +33,4 @@ for i in xrange(11, 10**9):
         count += 1
 
 print count, '<--count', time()-start, 'seconds'
+# 608720 <--count 2998.72614408 seconds
