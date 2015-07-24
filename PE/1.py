@@ -1,26 +1,5 @@
-#import math
-# print sum(i for i in range(1000) if (i % 3 == 0) or (i % 5 == 0)) #--> One Liner
-'''n = 0
-for i in range(1,1000):
-    if not i % 5 or not i % 3:
-        n = n + i
-        print (n)'''
-import time
-start_time = time.clock()
-i = 0
-n = 0
-p =0
-k=0
-while n <= 333:  #3*333= 999<1000
-    p = p + 3*n
-    n=n+1
-    #print (p)
-while i <= 199: #5*199=995<1000
-    k = k  + 5*i
-    i=i+1
-    #print(k)
-print(p+k,' - ans')
-print(time.clock() - start_time,'Seconds')
+
+print sum(i for i in range(1000) if (i % 3 == 0) or (i % 5 == 0))  # One Liner
 
 '''
 while n < 334:
@@ -39,7 +18,21 @@ while i < 200:
 print("the ans- ",p+o)
  '''   
 
+def get_multiples(limit):
+    flag = True
+    n = 0
+    mult = []
+    while flag:
+        n += 1
+        n_3 = 3*n
+        n_5 = 5*n
+        if n_3 < limit:
+            mult.append(n_3)
+        if n_5 < limit:
+            mult.append(n_5)
+        if n_3 >= limit:
+            flag = False
+    print mult
+    return mult
 
-    
-    
-    
+# print sum(get_multiples(1000))
