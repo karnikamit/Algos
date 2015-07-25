@@ -4,7 +4,7 @@ from time import time
 from factors import get_factors
 
 
-def triangle_numbers():
+def triangle_numbers(limit):
     flag = True
     n = 0
     t_no = 0
@@ -13,9 +13,9 @@ def triangle_numbers():
         t_no += n
         if is_prime(t_no):
             continue
-        if len(get_factors(t_no)) > 500:
+        if len(get_factors(t_no)) > limit:
             return t_no
 
 if __author__ == 'karnikamit':
     start = time()
-    print triangle_numbers(), time()-start
+    print triangle_numbers(100), 'Runtime:', time()-start
