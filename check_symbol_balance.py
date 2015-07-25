@@ -2,9 +2,9 @@ __author__ = 'karnikamit'
 
 
 def check_symbol_balance(data):
-    p = ["(", ")"]
-    c = ["{", "}"]
-    sq = ["[", "]"]
+    p = "()"
+    c = "{}"
+    sq = "[]"
     count_p, count_c, count_sq = 0, 0, 0
     for item in data:
         if item == p[0]:
