@@ -3,6 +3,7 @@ __author__ = 'karnikamit'
 check symbol balance using string iterations
 '''
 
+
 def check_symbol_balance(data):
     p = "()"
     c = "{}"
@@ -33,6 +34,8 @@ check symbol balance using dict and stack
 """
 
 from stack import Stack
+
+
 def chk_synm_bal(data):
     s = Stack()
     check = {"{": "}", "[": "]", "(": ")"}
