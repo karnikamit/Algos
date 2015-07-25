@@ -39,4 +39,4 @@ class Hash:
     def text(self):
         return self.str[self.init: self.end]
 
-# print robin_karp('3141592421572', '1415')
+# print robin_karp('31421592421572', '42157')
