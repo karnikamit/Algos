@@ -5,6 +5,7 @@ class Node:
     def __init__(self):
         self.data = None
         self.next = None
+        self.length = 0
 
     def set_data(self, data):
         self.data = data
@@ -22,3 +23,10 @@ class Node:
         if self.next is not None:
             return True
         return False
+
+    def get_length(self):
+        if self.data:
+            for i in self.data:
+                self.length += 1
+            return self.length
+        return self.length
