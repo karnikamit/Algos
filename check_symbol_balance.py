@@ -1,5 +1,7 @@
 __author__ = 'karnikamit'
-
+'''
+check symbol balance using string iterations
+'''
 
 def check_symbol_balance(data):
     p = "()"
@@ -23,5 +25,31 @@ def check_symbol_balance(data):
         return True
     return False
 
+# ip = "([]{()({})})"
+# print check_symbol_balance(ip)
+
+"""
+check symbol balance using dict and stack
+"""
+
+from stack import Stack
+def chk_synm_bal(data):
+    s = Stack()
+    check = {"{": "}", "[": "]", "(": ")"}
+    balanced = False
+    for item in data:
+        if item in check.keys():
+            s.push(item)
+        if item in check.values():
+            try:
+                symbol = s.pop()
+                if item == check[symbol]:
+                    balanced = True
+                else:
+                    balanced = False
+            except IndexError:
+                balanced = False
+    return balanced
+
 ip = "([]{()({})})"
-print check_symbol_balance(ip)
+print chk_synm_bal(ip)
