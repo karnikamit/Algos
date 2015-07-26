@@ -18,6 +18,7 @@ def add_files(a_list):
 
 def merge_files(array):
     array.sort()
+    print array
     return add_files(array)
 
 
