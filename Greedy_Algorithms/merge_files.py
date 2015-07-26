@@ -5,6 +5,7 @@ Given an array of file sizes, merge the files
 '''
 # Using recursion
 
+
 def add_files(a_list):
     if len(a_list) > 1:
         a = a_list.pop(0)
