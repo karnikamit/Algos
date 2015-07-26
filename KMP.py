@@ -1,14 +1,5 @@
 __author__ = 'karnikamit'
 
-"""
-T - String to be searched
-p  pattern to be matched
-complexity O(n),
-it avoids the caparisons with elements of T that were previously involved
- in comparison with some element of the pattern p.
-
-"""
-
 
 # Forming a prefix table
 def prefix_table(pattern):
@@ -26,6 +17,15 @@ def prefix_table(pattern):
 
 # Matching algorithm
 def kmp(text, pattern):
+    """
+    complexity O(n),
+    it avoids the caparisons with elements of T that were previously involved
+     in comparison with some element of the pattern p.
+
+    :param text: String to be searched
+    :param pattern: pattern to be matched
+    :return: index of first occurrence
+    """
     n = len(text)
     m = len(pattern)
     f = prefix_table(pattern)
