@@ -1,4 +1,5 @@
 __author__ = 'karnikamit'
+from sanitize import sanitize
 '''
 get the first repeated character from the string
 '''
@@ -19,9 +20,7 @@ get the count of characters
 
 def get_count(string):
     dic_string = dict()
-    if " " in string:
-        string = string.replace(" ", "")
-    for char in string.lower():
+    for char in string:
         if char in dic_string:
             dic_string[char] += 1
         else:
@@ -35,6 +34,7 @@ get max repeated character
 '''
 
 
+@sanitize
 def get_max(string):
     count = get_count(string)
     max_count = 0
@@ -47,4 +47,4 @@ def get_max(string):
             return key
     return -1
 
-print get_max('name is Amit')
+print get_max('name, is Amit.')
