@@ -1,11 +1,11 @@
 import time
 start_time = time.clock()
 s = 0
-for n1 in range(100000,1000000):
+for n1 in range(100000, 1000000):
     num = n1
     my_list = []
     while num > 1:
-        if num%2 == 0 :
+        if num % 2 == 0:
             num /= 2
             my_list.append(num)
         else:

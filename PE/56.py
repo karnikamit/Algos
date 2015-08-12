@@ -5,7 +5,7 @@ for num in a:
     mds1 = []
     for num1 in b:
         ds = num ** num1
-        x = sum(map(int,str(ds)))
+        x = sum(map(int, str(ds)))
         mds1.append(x)
     if max(mds1) > mds:
         mds = max(mds1)

@@ -20,10 +20,11 @@ def get_psr(n):
     check = sqrt(n)
     for i in xrange(1, int(check+1)):
         if n % i == 0:
-            if i > psr and i < check:
+            if check > i > psr:
                 psr = i
     return psr
 # print get_psr(3102)   # 47
+
 
 def main(limit):
     prime_prod = get_prod_prime(limit)
