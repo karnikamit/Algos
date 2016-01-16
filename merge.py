@@ -28,7 +28,7 @@ def merge(x, y):
         else:
             result.append(y[j])
             j += 1
-if __author__ == 'karnikamit':
+if __name__ == '__main__':
     a = range(10)
-    b = range(20)
+    b = range(20, 30)
     print merge(a, b)
