@@ -25,21 +25,3 @@ for ori_num in xrange(1, 12497):
     length = len(find_am_chain(ori_num, am_list))
     (num, maximum) = length > maximum and (ori_num, length) or (num, maximum)
 print num, maximum
-
-
-# for i in xrange(100, 104):
-#     globals()
-#     ori_num = i
-#     print find_am_chain(ori_num)
-
-# def find_longest_am_chain(till):
-#     longest_am_list = []
-#     for i in xrange(till):
-#
-#         temp = find_am_chain(i, i, am_list)
-#         if temp:
-#             if len(temp) > len(longest_am_list):
-#                 longest_am_list = temp
-#     return longest_am_list
-#
-# print find_longest_am_chain(100)
