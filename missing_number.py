@@ -35,7 +35,7 @@ if __name__ == '__main__':
         if counter[key] == fq:
             diff = key
     if not all(x == v[0] for x in v):       # check weather an item is missing
-        print 'missing number is %d' % find_missing_number(t, diff)
+        print 'missing number: %d' % find_missing_number(t, diff)
     else:
         print 'No items are missing in %s' % t
 
