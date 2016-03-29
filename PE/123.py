@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'karnikamit'
 from is_prime import is_prime
+import time
 
 
 def get_prime(n):
@@ -19,11 +20,13 @@ def euler(pN, check):
     return response
 
 if __name__ == '__main__':
-    n = 3
+    start = time.time()
+    n = 7037
     flag = True
     while flag:
         p = get_prime(n)
-        flag = euler(p, 10**9)
+        flag = euler(p, 10**10)
         if not flag:
             print 'prime you are looking for is %d and appears at %d' % (p, n)
         n += 1
+    print 'time took:', time.time() - start
