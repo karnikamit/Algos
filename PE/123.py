@@ -1,25 +1,29 @@
+# -*- coding: utf-8 -*-
 __author__ = 'karnikamit'
 from is_prime import is_prime
 
-class PrimeRemainders:
-    def __init__(self):
-        self.prime = None
-        self.prime_nos = [i for i in xrange(2, 10000) if is_prime(i)]
+
+def get_prime(n):
+    j = 0
+    for i in (k for k in xrange(n**2) if is_prime(k)):
+        if j == n:
+            return i
+        j += 1
 
 
-    def get_prime_sq_remainders(self, n):
-        self.prime = self.prime_nos[n-1]
-        numarator = ((self.prime-1)**n + (self.prime+1)**n)
-        denominator = (self.prime**2)
-        print numarator, denominator
-        return numarator/denominator
+def euler(pN, check):
+    r = ((pN - 1)**n + (pN + 1)**n) % pN**2
+    response = True
+    if r > check:
+        response = False
+    return response
 
-    def main(self):
-        for i in xrange(2, 10000):
-            r = self.get_prime_sq_remainders(i)
-            if r >= 1000000000:
-                return self.prime
-        return "NOT Found!"
-
-p = PrimeRemainders()
-print p.main()
+if __name__ == '__main__':
+    n = 3
+    flag = True
+    while flag:
+        p = get_prime(n)
+        flag = euler(p, 10**9)
+        if not flag:
+            print 'prime you are looking for is %d and appears at %d' % (p, n)
+        n += 1

@@ -14,5 +14,6 @@ def is_prime(number):
         for current in range(3, int(sqrt(number) + 1), 2):
             if number % current == 0:
                 return False
-        return True
+        else:
+            return True
     return False
