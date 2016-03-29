@@ -4,7 +4,7 @@ name = ''
 number = random.randrange(0, 5)
 num = str (number)
 if num == '0':
-# return 0
+    pass
 elif num == '1':
     print("Player pics- Spock")
 elif num == '2':
