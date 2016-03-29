@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = 'karnikamit'
 from is_prime import is_prime
-from numpy import prod
 from math import sqrt
 from time import time
 import itertools
@@ -19,15 +18,20 @@ def get_prod_primes(n):
 # print get_raw_psr(3102)
 
 
+def get_divisors(num):
+    n = num/2
+    n += 1
+    return (i for i in itertools.count(1, step=2) if num % i == 0)
+
+
 def get_psr(n):
+    divs = get_divisors(n)
     check = sqrt(n)
-    psr_list = []
-    for i in itertools.count(1):
-        if i > int(check):
-            break
-        if n % i == 0:
-            psr_list.append(i)
-    return max(psr_list)
+    old = 0
+    for i in divs:
+        if i > int(check)+1:
+            return old
+        old = i
 
 
 def main(limit):
