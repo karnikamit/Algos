@@ -1,18 +1,25 @@
 # -*- coding: utf-8 -*-
 __author__ = "karnikamit"
-from PE_42 import get_words, get_word_value, clock
+from string import ascii_uppercase
+from time import clock
 
 
-def get_name_scores(filename):
-    words = get_words(filename)
-    sorted_words = sorted(words, key=lambda x: x[0])
-    total_score = 0
-    for i, name in enumerate(sorted_words):
-        value = get_word_value(name)
-        total_score += value * i
-    return total_score
+def get_names(filename):
+    with open(filename) as f:
+        names = f.read().split(',')
+        names.sort()
+        return names
 
-if __name__ =='__main__':
+
+def get_total_score(names_list):
+    return sum(i*score(x) for i, x in enumerate(names_list, 1))
+
+
+def score(word):
+    return sum(ascii_uppercase.index(c) + 1 for c in word.strip('"'))
+
+if __name__ == '__main__':
     start = clock()
-    print get_name_scores('p022_names.txt')  # 871198282
+    name_list = get_names('p022_names.txt')
+    print get_total_score(name_list)
     print 'runTime:', clock()-start, 's'
