@@ -36,18 +36,20 @@ def trubnc_right(j):
 
 def truncatable_primes(n):
     primes = get_primes(n)
-    truncatable = []
+    truncatable = 0
+    k = 0
     for i in primes:
-        if len(truncatable) == 11:
+        if k == 11:
             return truncatable
         prime_string1 = str(i)
         prime_string2 = str(i)
         if len(str(i)) > 1:
             if trunc_left(prime_string1) and trubnc_right(prime_string2):
-                truncatable.append(i)
+                truncatable += i
+                k += 1
 
 
 if __name__ == '__main__':
     start = clock()
-    print sum(truncatable_primes(1000000))
-    print 'RunTime:', clock()-start, 's'
+    print truncatable_primes(800000)
+    print 'RunTime:',clock()-start, 's'
