@@ -1,5 +1,0 @@
-# -*- coding: utf-8 -*-
-__author__ = "karnikamit"
-
-
-is_square = lambda x: int(x ** 0.5) ** 2 == x
