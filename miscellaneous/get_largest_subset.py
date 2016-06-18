@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 __author__ = 'karnikamit'
+'''
+given an array, find the largest good subset.
+A good subset is when the integers in the selected subset, divides every other number.
+ ie array[i]%array[j] == 0 or array[j]%array[i] == 0
+'''
 size_of_array = input()
 array = []
 for i in xrange(size_of_array):
