@@ -34,12 +34,15 @@
         $ python save_princes.py
 
     * INPUT
-    - N (int odd size of the matrix)
-    - next N lines matrix array
+        - N (int odd size of the matrix)
+        - next N lines matrix array
 
     * Example Input
-    m - mario
-    p - princess
+    ::
+
+        m - mario
+        p - princess
+
     ::
 
         $ python save_princes.py
