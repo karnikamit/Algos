@@ -1,9 +1,7 @@
-# Games
-
 * TIC-TAC-TOE
--------------
 
     * How To Play
+    ::
 
         $ cd games
         $ python tic_tac_toe.py
