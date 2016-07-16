@@ -17,7 +17,7 @@ steps = 0
 
 
 def ihanoi(n, source, helper, target):
-    if n > 1:
+    if n > 0:
         ihanoi(n-1, source, target, helper)
         if source:
             target.append(source.pop())
