@@ -1,24 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = 'karnikamit'
 
-'''
-initial matrix
-[[0, 0, 0],
- [0, 0, 0],
- [0, 0, 0]]
-
-example input:
-    'player 1(path, option): 1,1,X
-
-    re built matrix
-    [[0, 0, 0],
-     [0, 'X', 0],
-     [0, 0, 0]]
-
-    so on ...
-
-'''
-
 
 class TicTacToe:
 
