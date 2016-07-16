@@ -34,37 +34,45 @@ class TicTacToe:
             matrix.append(temp)
         return matrix
 
-    def _play(self):
+    def play(self):
         print 'input option as Ex: 1,1,X'
-        print
-        print self.matrix
         print
         self.matrix = self._build_matrix()
         while True:
-            p1 = self._rebuild_matrix(self._player1_ip())
-            print self.matrix
-            if p1:
-                return p1
-            p2 = self._rebuild_matrix(self._player2_ip())
-            print self.matrix
-            if p2:
-                return p2
+            p1 = self._player_ip(1)
+            while not self._mark_cell(p1):
+                p1 = self._player_ip(1)
+            p1_resp = self._rebuild_matrix(p1)
+            self.display_matrix()
+            if p1_resp:
+                return p1_resp
+
+            p2 = self._player_ip(2)
+            while not self._mark_cell(p2):
+                p2 = self._player_ip(2)
+            p2_resp = self._rebuild_matrix(p2)
+            self.display_matrix()
+            if p2_resp:
+                return p2_resp
 
             c = self._check()
             if c:
                 return c
 
-    def _player1_ip(self):
-        return raw_input('player 1(path, option): ')
+    def _player_ip(self, player):
+        return raw_input('player %d(row,column,mark): ' % player)
 
-    def _player2_ip(self):
-        return raw_input('player 2(path, option): ')
+    def _mark_cell(self, option):
+        i1, i2, mark = option.split(',')
+        i1, i2 = map(int, [i1, i2])
+        if not self.matrix[i1][i2]:
+            return True
+        return False
 
     def _rebuild_matrix(self, option):
-        i1, i2 = int(option[0]), int(option[2])
-        mark = option[4]
-        if not self.matrix[i1][i2]:
-            self.matrix[i1][i2] = mark
+        i1, i2, mark = option.split(',')
+        i1, i2 = map(int, [i1, i2])
+        self.matrix[i1][i2] = mark
 
         if len(filter(lambda x: x == mark, self.matrix[i1])) == 3:      # horizontal check
             return 'player with %s mark has won the game' % mark
@@ -94,6 +102,12 @@ class TicTacToe:
             if f == 3:
                 return 'Board full'
 
+    def display_matrix(self):
+        for i in self.matrix:
+            for k in i:
+                print k,
+            else:
+                print
 if __name__ == '__main__':
     t = TicTacToe()
-    print t._play()
+    print t.play()
