@@ -1,3 +1,1 @@
-# Algos
-# ProjectEuler Solutions
-# Miscellaneous Probs
+# Tried Algorithms
