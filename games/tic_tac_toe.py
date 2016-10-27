@@ -5,7 +5,8 @@ __author__ = 'karnikamit'
 class TicTacToe:
 
     def __init__(self):
-        self.matrix = []
+        self.matrix = self._build_matrix('-')
+        self.display_matrix()
 
     def _build_matrix(self, initial=None):
         matrix = []
@@ -19,7 +20,7 @@ class TicTacToe:
     def play(self):
         print 'input option as Ex: 1,1,X'
         print
-        self.matrix = self._build_matrix()
+        # self.matrix = self._build_matrix()
         while True:
             p1 = self._player_ip(1)
             while not self._mark_cell(p1):
@@ -42,12 +43,12 @@ class TicTacToe:
                 return c
 
     def _player_ip(self, player):
-        return raw_input('player %d(row,column,mark): ' % player)
+        return raw_input('Mark it player %d: ' % player)
 
     def _mark_cell(self, option):
         i1, i2, mark = option.split(',')
         i1, i2 = map(int, [i1, i2])
-        if not self.matrix[i1][i2]:
+        if not self.matrix[i1][i2] == '-':
             return True
         return False
 
