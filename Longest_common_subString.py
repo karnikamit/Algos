@@ -1,7 +1,8 @@
 __author__ = 'karnikamit'
 
 
-class LCS:
+class LCS(object):
+
     def __init__(self, line1, line2):
         self.line1 = line1.lower()
         self.line2 = line2.lower()

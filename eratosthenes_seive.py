@@ -11,12 +11,13 @@ def get_primes(n):
 
     :return: List of primes
     """
-    numbers = range(2, n)
+    numbers = range(3, n)
     nos_check = range(2, int(math.sqrt(n)+1))
     for i in nos_check:
         numbers = filter(lambda x: x % i != 0, numbers)
     else:
+        numbers.insert(0, 2)    # TODO Fix this!
         return numbers
 
 if __name__ == '__main__':
-    print get_primes(10000)
+    print get_primes(14)
