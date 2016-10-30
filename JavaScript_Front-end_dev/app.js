@@ -2,20 +2,13 @@ var app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope){
         var appCtrl = this;
         appCtrl.searchParam = '';
-        $scope.records = {
+        appCtrl.records = {
             amit: {
                 name: "amit",
-                age: '27',
-                sex: 'Male',
-                relationship: 'Single'
+                age: '27'
             }
         };
         appCtrl.search = function(value){
-            return $scope.records.value
+            return appCtrl.records.value
         };
-    });
-
-    app.directive('myDirective', function(){
-        var myDirc = this;
-        myDirc
     });
