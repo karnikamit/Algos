@@ -53,3 +53,18 @@ class BinaryTree(object):
     #     else:
     #         tree = BinaryTree(value)
     #         tree.right, self.right_child = self.right_child, tree
+###
+cases = int(raw_input())
+num = map(int, raw_input().split(' '))
+assert len(num) == cases
+for j in num:
+    numbers = range(1, j+1)
+    for i in numbers:
+        if i % 5 == 0 and i % 3 == 0:
+            print 'FizzBuzz'
+        elif i % 5 == 0:
+            print 'Buzz'
+        elif i % 3 == 0:
+            print 'Fizz'
+        else:
+            print i
