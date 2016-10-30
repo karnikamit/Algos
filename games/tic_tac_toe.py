@@ -5,7 +5,8 @@ __author__ = 'karnikamit'
 class TicTacToe:
 
     def __init__(self):
-        self.matrix = []
+        self.matrix = self._build_matrix('-')
+        self.display_matrix()
 
     def _build_matrix(self, initial=None):
         matrix = []
