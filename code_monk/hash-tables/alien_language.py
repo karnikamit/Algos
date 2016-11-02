@@ -9,7 +9,12 @@ def check(a, b):
     :param b: str: pattern by jaadu
     :return: YES if any sub-string of Pattern is sub-string of Text else NO.
     """
-    return 'YES' if b in a else 'NO'
+    for char in b:
+        if a.find(char) > -1:
+            return 'YES'
+    else:
+        return 'NO'
+    # return 'YES' if b in a else 'NO'
 
 cases = int(raw_input())
 for _ in xrange(cases):
