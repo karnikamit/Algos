@@ -14,7 +14,7 @@ def get_primes(n):
     numbers = range(3, n)
     nos_check = range(2, int(math.sqrt(n)+1))
     for i in nos_check:
-        numbers = filter(lambda x: x % i != 0, numbers)
+        numbers = filter(lambda x: x % i, numbers)
     else:
         numbers.insert(0, 2)    # TODO Fix this!
         return numbers

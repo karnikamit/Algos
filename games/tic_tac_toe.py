@@ -18,6 +18,7 @@ class TicTacToe:
         return matrix
 
     def play(self):
+        print "USE only 'O' or  'X' marks!"
         print 'input option as Ex: 1,1,X'
         print
         # self.matrix = self._build_matrix()
@@ -48,7 +49,7 @@ class TicTacToe:
     def _mark_cell(self, option):
         i1, i2, mark = option.split(',')
         i1, i2 = map(int, [i1, i2])
-        if not self.matrix[i1][i2] == '-':
+        if self.matrix[i1][i2] == '-':
             return True
         return False
 
@@ -65,21 +66,22 @@ class TicTacToe:
         if len([mark for i in xrange(len(self.matrix)) if self.matrix[i][i] == mark]) == 3:
             return 'player with %s mark has won the game' % mark
         #  Diagonal check /
-        i, j, result = 2, 0, []
+        i, j, result = 2, 0, 0
         while i > -1:
             if self.matrix[i][j] != mark:
                 break
             else:
-                result.append(mark)
+                result += 1
             i -= 1
             j += 1
-        if len(result) == 3:
+        if result == 3:
             return 'player with %s mark has won the game' % mark
 
     def _check(self):
         f = 0
         for i in self.matrix:
-            if all(i):
+            child_matrix = filter(lambda x: x == 'O' or x == 'X', i)
+            if len(child_matrix) == 3:
                 f += 1
         else:
             if f == 3:
