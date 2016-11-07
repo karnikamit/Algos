@@ -53,3 +53,15 @@ class BinaryTree(object):
     #     else:
     #         tree = BinaryTree(value)
     #         tree.right, self.right_child = self.right_child, tree
+
+from string import ascii_lowercase
+letters = ascii_lowercase
+start = 0
+l = 4
+end = 4
+i = 0
+while i < 7:
+    print letters[start: end]
+    i += 1
+    start = end
+    end += l

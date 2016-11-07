@@ -7,16 +7,16 @@ for _ in xrange(N):
     memory_hash.setdefault(_, []).extend(map(int, raw_input().split(' ')))
 
 
-def search_memory(hash, memory):
+def search_memory(hash_memory, memory):
     """
 
-    :param hash: a Memory dict
+    :param hash_memory: a Memory dict
     :param memory: memory whose position in the matrix has to be returned
     :return: position of the memory in the matrix else -1 -1
     """
-    for key in hash:
+    for key in hash_memory:
         try:
-            memory_index = hash[key].index(memory)
+            memory_index = hash_memory[key].index(memory)
             return key, memory_index
         except ValueError:
             pass
