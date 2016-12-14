@@ -12,3 +12,5 @@ def kadanes(a_list):
         if max_current > max_global:
             max_global = max_current
     return max_global
+
+print kadanes([3,3,9,9,5])
